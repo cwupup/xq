@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+import "pkg/model/pb/proto/broker.proto";
+
+service XQ {
+    rpc JoinCluster (JoinClusterRequest) returns (JoinClusterReply);
+}
+
+message JoinClusterRequest {
+    BrokerMeta meta = 1;
+}
+
+message JoinClusterReply {
+}

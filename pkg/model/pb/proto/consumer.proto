@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+message ConsumerMeta {
+    string name = 1;
+    int32 id = 2;
+    repeated int32 topics = 3;
+    int32 subscribedOwner = 4;
+    int32 subscribedNamespace = 5;
+    ConsumeType type = 6;
+    ConsumeMode mode = 7;
+    ConsumeState state = 8;
+}
+
+enum ConsumeType {
+    Pull = 0;
+    Push = 1;
+}
+
+enum ConsumeMode {
+    Exclusive = 0;
+    Shared = 1;
+    StandBy = 2;
+}
+
+enum ConsumeState {
+    COffline = 0;
+    COnline = 1;
+    CRebalancing = 2;
+    CConsuming = 3;
+}

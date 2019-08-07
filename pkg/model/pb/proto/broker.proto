@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+enum BrokerState {
+   BOffline = 0;
+   BOnline = 1;
+   BWorking = 2;
+   BAbnormal = 3;
+}
+
+message BrokerMeta {
+    int32 id = 1;
+    int64 adminPort = 2;
+    int64 servicePort = 3;
+    string hostName = 4;
+    string ip = 5;
+    BrokerState state = 6;
+
+}

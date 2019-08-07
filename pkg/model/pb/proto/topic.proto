@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+message TopicMeta {
+    string name = 1;
+    TopicType type = 2;
+    int32 id = 3;
+    int32 partitionNum = 4;
+    string owner = 5;
+}
+
+enum TopicType {
+    Ordered = 0;
+    Delay = 1;
+}

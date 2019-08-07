@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+message ClusterMeta {
+    string name = 1;
+    int32 id = 2;
+}

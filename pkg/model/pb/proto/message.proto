@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "pkg/model/pb";
+
+message Message {
+    string topic = 1;
+    int32 partition = 2;
+    int64 offset = 3;
+    bytes body = 4;
+    MessageMeta meta = 5;
+}
+
+message MessageMeta {
+    bytes key = 1;
+    string producerName = 2;
+    int64 produceSeqID = 3;
+    int64 timestamp = 4;
+    bytes replicatedSrc = 5;
+    map<string, string> properties = 6;
+}
